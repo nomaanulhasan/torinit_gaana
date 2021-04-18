@@ -5,11 +5,17 @@
     margin: 1rem;
 
     &-container {
+        border: 1px solid rgba($light, 0.06);
+        background-color: rgba($light, 0.04);
+        @include transition(all);
+        @include border-radius;
+        @include box-shadow;
         min-height: 180px;
-        padding: 0.5rem;
-        width: 180px;
+        padding: 0.6rem;
+        width: 100%;
 
         &:hover, &:focus-within {
+            transform: scale(1.1);
             button { opacity: 1; }
         }
         &-thumb {
@@ -19,11 +25,13 @@
 
             img {
                 margin-bottom: 0.5rem;
+                object-fit: cover;
+                height: 170px;
                 width: 100%;
             }
             button {
-                transition: opacity 0.5s ease;
                 background: rgba($dark, 0.8);
+                @include transition(opacity);
                 border-radius: 50%;
                 position: absolute;
                 font-weight: 600;
@@ -37,9 +45,18 @@
                 border: 0;
             }
         }
-        figcaption {
-            @include text-overflow-two;
-            font-size: 0.8rem;
+        .song-info {
+            @include song-info;
+
+            &-title {
+                @include text-overflow-one;
+                line-height: 1.8rem;
+				font-weight: 600;
+            }
+            &-description {
+                @include text-overflow-one;
+                font-size: 0.7rem;
+            }
         }
     }
 }

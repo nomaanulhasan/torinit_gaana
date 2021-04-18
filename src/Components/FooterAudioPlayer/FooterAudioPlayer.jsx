@@ -14,8 +14,8 @@ const FooterAudioPlayer = ({isPlayerReady, currentSong}) => {
                 <div className="song-data">
                     <div className="song-data-thumb"><img src={currentSong.artworkUrl60} alt="thumb" /></div>
                     <div className="song-info">
-                        <div className="song-info-title">{currentSong.trackCensoredName}</div>
-                        <div className="song-info-description">{currentSong.collectionName}</div>
+                        <div className="song-info-title">{currentSong.trackCensoredName || currentSong.artistName}</div>
+                        <div className="song-info-description">{currentSong.collectionCensoredName}</div>
                     </div>
                 </div>
                 

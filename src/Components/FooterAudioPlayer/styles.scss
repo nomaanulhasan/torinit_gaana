@@ -2,15 +2,21 @@
 @import '../../_assets/styles/mixins';
 
 .footer-audio-player {
+	min-height: $player-height;
+    @include transition(all);
+	@include box-shadow;
 	position: fixed;
-	display: flex;
 	padding: 1rem;
+	display: flex;
+	z-index: 9999;
 	width: 100%;
 	bottom: 0;
 
 	.song-data {
-		display: flex;
+		@include transition(all);
+		margin-right: 1rem;
 		max-width: 40vw;
+		display: flex;
 
 		&-thumb {
 			margin-right: 1rem;
@@ -18,31 +24,33 @@
 			img { display: block }
 		}
 		.song-info {
-			flex-direction: column;
-			text-align: left;
-			display: flex;
+            @include song-info;
 
 			&-title {
 				@include text-overflow-one;
-				line-height: 2rem;
+                line-height: 2rem;
 				font-weight: 600;
 			}
 			&-description {
 				@include text-overflow-one;
 				font-size: 0.8rem;
 			}
-		}
+        }
 	}
 	audio {
 		background-color: transparent;
+		@include transition(width);
 		display: block;
 		margin: auto;
 		width: 50vw;
 		outline: 0;
 	}
 	.autoplay {
+		@include transition(width);
 		justify-content: center;
 		align-items: center;
+		margin-left: 1rem;
+		font-weight: 600;
 		display: flex;
 
 		label {
@@ -58,11 +66,13 @@
 			input { visibility: hidden }
 		}
 		span {
+			border: 1px solid $theme-dark-bg;
 			background-color: $light;
-			padding: 0.2rem 0.5rem;
 			display: inline-block;
-			border-radius: 15px;
+			border-radius: 0.8rem;
+			padding: 0.1rem 0;
 			margin-left: 10px;
+			min-width: 55px;
 			color: $dark;
 		}
 	}

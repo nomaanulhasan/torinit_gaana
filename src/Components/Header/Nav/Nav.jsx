@@ -1,16 +1,21 @@
 import React from 'react';
 import { toggleTheme, handleSession } from './helper';
+import Search from '../../Search';
+// import history from '../../../history';
 
 import './styles.scss';
 
 const Nav = () => {
 	return (
 		<nav>
-			<ul className="nav-list">
-				<li>Home</li>
+			{/* <ul className="nav-list">
+				<li onClick={history.push('/home')}>Home</li>
 				<li>Browse</li>
 				<li>Search</li>
-			</ul>
+			</ul> */}
+			
+			<Search />
+
 			<div className="interactive-tools">
 				<button className="btn btn-theme" onClick={toggleTheme}>
 				<svg width="24" height="24" viewBox="0 0 24 24">

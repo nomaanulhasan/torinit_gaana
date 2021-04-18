@@ -4,14 +4,22 @@ header {
 	justify-content: space-between;
 	min-height: $header-height;
 	align-items: center;
+	@include box-shadow;
 	padding: 0 1rem;
+	position: fixed;
+	z-index: 99999;
 	display: flex;
+	width: 100%;
+	left: 0;
+	top: 0;
 
 	.logo {
 		line-height: $header-height;
+		margin: 0 2rem 0 0.5rem;
 		@include main-logo;
-		margin: 0 2rem 0 1rem;
 		outline: 0;
 		border: 0;
+
+		&:hover { opacity: 0.9 }
 	}
 }

@@ -4,6 +4,7 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 	box-sizing: border-box;
+	user-select: none;
 	padding: 0;
 	margin: 0;
 }
@@ -14,6 +15,8 @@ body {
 
 #page-layout {
 	justify-content: space-between;
+	padding-bottom: $player-height;
+	padding-top: $header-height;
 	flex-direction: column;
 	align-items: stretch;
 	min-height: 100vh;
@@ -26,13 +29,19 @@ body {
 
 			header {
 				background-color: $theme-light-bg;
-				transition: all 0.5s ease;
+				@include transition(all);
 				color: $theme-light-text;
 			}
 			.btn-theme {
 				.fill_path { fill: $theme-btn-light-text }
 			}
 			.footer-audio-player { background-color: $theme-light-bg }
+			#search {
+				background-color: rgba($theme-dark-bg, 0.05);
+				&:focus, &:focus-within {
+					border-color: rgba($theme-dark-bg, 0.05);
+				}
+			}
 		}
 		&-dark {
 			background-color: rgba($theme-dark-bg, 0.8);
@@ -40,17 +49,28 @@ body {
 			
 			header {
 				background-color: $theme-dark-bg;
-				transition: all 0.5s ease;
+				@include transition(all);
 				color: $theme-dark-text;
 			}
 			.btn-theme {
 				.fill_path { fill: $theme-btn-dark-text }
 			}
 			.footer-audio-player { background-color: $theme-dark-bg }
+			#search {
+				background-color: rgba($theme-light-bg, 1);
+				&:focus, &:focus-within {
+					border-color: rgba($theme-dark-bg, 0.25);
+				}
+			}
 		}
 	}
 
 	section {
 		flex-grow: 1;
+
+		.no-search-data {
+			padding-top: 20vh;
+		}
 	}
+	
 }

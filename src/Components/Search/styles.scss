@@ -1,0 +1,28 @@
+@import '../../_assets/styles/variables';
+
+.search-bar {
+    justify-content: flex-start;
+    padding: 0 1rem;
+    display: flex;
+    flex-grow: 1;
+
+    #search {
+        border: 3px solid transparent;
+        border-radius: 100px;
+        padding: 0 1rem;
+        margin-left: 0;
+        outline: none;
+        height: 40px;
+        width: 40vw;
+    }
+
+    .visually-hidden {
+        clip-path: inset(50%);
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        position: absolute;
+        overflow: hidden;
+        height: 1px;
+        width: 1px;
+    }
+}

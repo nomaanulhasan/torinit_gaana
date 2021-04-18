@@ -10,7 +10,10 @@ const SongBox = ({song, setIsPlayerReady, setCurrentSong}) => {
                 <button onClick={() => handleSongPlay(song, setIsPlayerReady, setCurrentSong)}>Play</button>
                 <img src={song.artworkUrl100} alt="Thumbnail" />
             </div>
-            <figcaption>{song.collectionName}</figcaption>
+            <figcaption className="song-info">
+                <div className="song-info-title">{song.trackCensoredName || song.artistName}</div>
+                <div className="song-info-description">{song.collectionCensoredName}</div>
+            </figcaption>
         </figure>
     )
 }
