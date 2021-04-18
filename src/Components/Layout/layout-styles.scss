@@ -32,11 +32,12 @@ body {
 			.btn-theme {
 				.fill_path { fill: $theme-btn-light-text }
 			}
+			.footer-audio-player { background-color: $theme-light-bg }
 		}
 		&-dark {
 			background-color: rgba($theme-dark-bg, 0.8);
 			color: $theme-dark-text;
-
+			
 			header {
 				background-color: $theme-dark-bg;
 				transition: all 0.5s ease;
@@ -45,6 +46,7 @@ body {
 			.btn-theme {
 				.fill_path { fill: $theme-btn-dark-text }
 			}
+			.footer-audio-player { background-color: $theme-dark-bg }
 		}
 	}
 

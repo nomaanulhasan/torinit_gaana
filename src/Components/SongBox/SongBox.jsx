@@ -3,11 +3,11 @@ import { handleSongPlay } from './helper';
 
 import './styles.scss';
 
-const SongBox = ({song}) => {
+const SongBox = ({song, setIsPlayerReady, setCurrentSong}) => {
     return (
         <figure className="song-container">
             <div className="song-container-thumb">
-                <button onClick={() => handleSongPlay(song)}>Play</button>
+                <button onClick={() => handleSongPlay(song, setIsPlayerReady, setCurrentSong)}>Play</button>
                 <img src={song.artworkUrl100} alt="Thumbnail" />
             </div>
             <figcaption>{song.collectionName}</figcaption>

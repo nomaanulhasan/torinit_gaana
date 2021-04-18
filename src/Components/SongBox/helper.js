@@ -1,7 +1,5 @@
 
-export const handleSongPlay = song => {
-	const currentSong = song;
-	const songUrl = currentSong.previewUrl;
-
-	return songUrl;
+export const handleSongPlay = (song, setIsPlayerReady, setCurrentSong) => {
+	setCurrentSong(song);
+	setIsPlayerReady(true);
 };

@@ -5,7 +5,7 @@ import Loader from '../Loader';
 
 import './styles.scss';
 
-const SongsList = () => {
+const SongsList = ({setIsPlayerReady, setCurrentSong}) => {
     const [songList, setSongList] = useState();
 	const [loader, setLoader] = useState(false);
 
@@ -19,10 +19,10 @@ const SongsList = () => {
 			(async () => {
 				const res = await getSongsData(filterData);
 				const songList = res?.data?.results;
-                console.log(songList);
+                // console.log(songList);
 				setSongList(songList);
+                setLoader(false);
 			})();
-			setLoader(false);
 		} catch (err) {
 			return [];
 		}
@@ -34,7 +34,9 @@ const SongsList = () => {
                 <h1 className="song-list-head">Trending Songs</h1>
                 <div className="song-list--row-container">
                     {songList.map((song, i) => {
-                        return <SongBox key={`song_${i}`} song={song} />
+                        return <SongBox key={`song_${i}`}
+                                    song={song} setCurrentSong={setCurrentSong}
+                                    setIsPlayerReady={setIsPlayerReady} />
                     })}
                 </div>
             </div>

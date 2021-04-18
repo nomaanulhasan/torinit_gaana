@@ -1,0 +1,69 @@
+@import '../../_assets/styles/variables';
+@import '../../_assets/styles/mixins';
+
+.footer-audio-player {
+	position: fixed;
+	display: flex;
+	padding: 1rem;
+	width: 100%;
+	bottom: 0;
+
+	.song-data {
+		display: flex;
+		max-width: 40vw;
+
+		&-thumb {
+			margin-right: 1rem;
+			
+			img { display: block }
+		}
+		.song-info {
+			flex-direction: column;
+			text-align: left;
+			display: flex;
+
+			&-title {
+				@include text-overflow-one;
+				line-height: 2rem;
+				font-weight: 600;
+			}
+			&-description {
+				@include text-overflow-one;
+				font-size: 0.8rem;
+			}
+		}
+	}
+	audio {
+		background-color: transparent;
+		display: block;
+		margin: auto;
+		width: 50vw;
+		outline: 0;
+	}
+	.autoplay {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+
+		label {
+			text-transform: uppercase;
+			justify-content: center;
+			align-items: center;
+			font-size: 0.8rem;
+			min-width: 120px;
+			cursor: pointer;
+			max-width: 10vw;
+			display: flex;
+
+			input { visibility: hidden }
+		}
+		span {
+			background-color: $light;
+			padding: 0.2rem 0.5rem;
+			display: inline-block;
+			border-radius: 15px;
+			margin-left: 10px;
+			color: $dark;
+		}
+	}
+}

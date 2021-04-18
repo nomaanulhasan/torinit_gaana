@@ -1,4 +1,5 @@
-@import '../../_assets/styles/variables.scss';
+@import '../../_assets/styles/variables';
+@import '../../_assets/styles/mixins';
 
 .song {
     margin: 1rem;
@@ -37,13 +38,8 @@
             }
         }
         figcaption {
-            display: -webkit-box !important;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            white-space: normal;
+            @include text-overflow-two;
             font-size: 0.8rem;
-            overflow: hidden;
-            height: 2.4rem;
         }
     }
 }
