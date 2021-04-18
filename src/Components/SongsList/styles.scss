@@ -1,0 +1,15 @@
+@import '../../_assets/styles/variables.scss';
+
+.song-list {
+    &-head {
+        padding: 1.5rem 1rem 0.5rem;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    &--row {
+        &-container {
+            padding: 0.5rem;
+            display: flex;
+        }
+    }
+}

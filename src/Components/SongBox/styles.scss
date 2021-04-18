@@ -1,0 +1,49 @@
+@import '../../_assets/styles/variables.scss';
+
+.song {
+    margin: 1rem;
+
+    &-container {
+        min-height: 180px;
+        padding: 0.5rem;
+        width: 180px;
+
+        &:hover, &:focus-within {
+            button { opacity: 1; }
+        }
+        &-thumb {
+            place-items: center;
+            position: relative;
+            display: grid;
+
+            img {
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+            button {
+                transition: opacity 0.5s ease;
+                background: rgba($dark, 0.8);
+                border-radius: 50%;
+                position: absolute;
+                font-weight: 600;
+                cursor: pointer;
+                display: block;
+                outline: none;
+                color: $light;
+                height: 50px;
+                width: 50px;
+                opacity: 0;
+                border: 0;
+            }
+        }
+        figcaption {
+            display: -webkit-box !important;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            white-space: normal;
+            font-size: 0.8rem;
+            overflow: hidden;
+            height: 2.4rem;
+        }
+    }
+}
