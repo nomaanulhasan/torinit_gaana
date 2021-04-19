@@ -1,0 +1,47 @@
+@import './variables';
+
+@mixin main-logo {
+	font-family: 'Convergence', cursive;
+	background-color: transparent;
+    letter-spacing: -1px;
+	font-style: italic;
+	color: $gaana-red;
+	font-weight: 600;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+@mixin text-overflow-one {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin text-overflow-two {
+	display: -webkit-box !important;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	white-space: normal;
+	overflow: hidden;
+	height: 2.4rem;
+}
+
+@mixin song-info {
+	@include text-overflow-one;
+	flex-direction: column;
+	text-align: left;
+	display: flex;
+}
+
+$type: all;
+@mixin transition($type) {
+	@if ($type == all) {
+		transition: all 0.5s ease;
+	} @else {
+		transition: $type 0.5s ease;
+	}
+}
+
+@mixin box-shadow { box-shadow: 0 0 15px rgba($dark, 0.2) }
+
+@mixin border-radius { border-radius: 5px }
